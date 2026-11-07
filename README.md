@@ -239,42 +239,8 @@ React Router DOM with `HashRouter` handles navigation between the home page and 
 
 ## Deployment
 
-Vistara can be deployed to a static hosting service such as Vercel, Netlify, or GitHub Pages.
-
-### Deploy to Vercel
-
-1. Push the project to a GitHub repository.
-2. Sign in to [Vercel](https://vercel.com/) using your GitHub account.
-3. Choose **Add New → Project** and import the Vistara repository.
-4. Select Vite as the framework preset if it is not detected automatically.
-5. Use these build settings:
-
-   | Setting | Value |
-   |---|---|
-   | Build command | `npm run build` |
-   | Output directory | `dist` |
-   | Install command | `npm install` |
-
-6. Select **Deploy**.
-7. Open the URL provided by Vercel and test the website.
-
-### Deploy to Netlify
-
-1. Sign in to [Netlify](https://www.netlify.com/) and import the GitHub repository.
-2. Set the build command to `npm run build`.
-3. Set the publish directory to `dist`.
-4. Deploy the site and check the published URL.
-
-### Deploy to GitHub Pages
-
-1. Check the `base` setting in `vite.config.js`. For a repository site, it generally needs to match the repository path (for example, `/vistara/`). For a user or organisation site, the base path is usually `/`.
-2. Run `npm run build`.
-3. Publish the generated `dist/` directory using GitHub Actions or another GitHub Pages deployment workflow.
-4. Open the GitHub Pages URL and test the site.
-
-Because the app uses `HashRouter`, client-side page navigation can work on static hosting without custom route rewrites. The Vite `base` setting must still be correct for the chosen hosting setup.
-
----
+Vistara is deployed to a static hosting service, Vercel.
+https://vistara-rho.vercel.app/
 
 ## Design Decisions
 
@@ -335,5 +301,6 @@ Possible additions for future versions include:
 ## Author
 
 Created as a web design and development project.
+BY- Shally Goyanka
 
 **Vistara – Moments That Matter.**
