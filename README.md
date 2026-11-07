@@ -6,7 +6,7 @@ Vistara is a responsive, frontend-only event discovery and registration website.
 
 The project uses a calm, photography-led design with a warm colour palette, clear navigation, and layouts designed for desktop, tablet, and mobile screens.
 
-**Live website:** Add your deployed website URL here.
+**Live website:** https://vistara-rho.vercel.app/
 
 ---
 
