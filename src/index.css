@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Custom subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F7F5F0;
+  }
+  .dark ::-webkit-scrollbar-track {
+    background: #1B1A18;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #D9D0C3;
+    border-radius: 4px;
+  }
+  .dark ::-webkit-scrollbar-thumb {
+    background: #3A3834;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #783F46;
+  }
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background: #B76A74;
+  }
+
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* Button utility classes per specifications */
+  .btn-primary {
+    @apply inline-flex items-center justify-center min-h-[44px] px-6 py-2.5 rounded-lg font-medium text-sm text-white bg-burgundy hover:bg-[#5F3037] active:scale-[0.98] transition-all duration-200 shadow-soft-sm focus:outline-none focus:ring-2 focus:ring-burgundy focus:ring-offset-2 dark:focus:ring-offset-dark-bg disabled:opacity-50 disabled:cursor-not-allowed select-none;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center min-h-[44px] px-6 py-2.5 rounded-lg font-medium text-sm text-charcoal dark:text-dark-text bg-transparent border border-charcoal/30 hover:border-charcoal hover:bg-charcoal/5 dark:border-white/30 dark:hover:border-white dark:hover:bg-white/5 active:scale-[0.98] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-burgundy focus:ring-offset-2 dark:focus:ring-offset-dark-bg disabled:opacity-50 disabled:cursor-not-allowed select-none;
+  }
+
+  .link {
+    @apply relative inline-flex items-center font-medium text-charcoal dark:text-dark-text hover:text-burgundy dark:hover:text-burgundy-dark transition-colors duration-200 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-[1.5px] after:bottom-0 after:left-0 after:bg-current after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+}
+
+/* Custom shimmer animation for skeletons */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(217, 208, 195, 0.35) 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(217, 208, 195, 0.35) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.8s infinite;
+}
+
+.dark .animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.12) 50%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.8s infinite;
+}
+
